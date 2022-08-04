@@ -1,23 +1,204 @@
 ---
-title: "Quarto_A_to_Z"
-format: html
+title: "Quarto de A à Z"
+date: 2022-08-04
+format:
+  html:
+    theme: flatly
+    code-fold: true
+    toc: true
+    number-sections: true
+toc-title: "Table des matières"
+language:
+  label:
+    fig: "Figure "
+    tab: "Table "
+    published: "publié le"
+bibliography: "Science robuste.bib"
+link-citations: yes
+csl: apa-single-spaced.csl
 ---
 
-## Introduction
+# Qu'est ce que Quarto
 
-Partons à la découverte de Quarto 
+- système de publication
+- permet de combiner du texte, du code et des résultats d'analyses (e.g. ggplots) 
+- différents formats de documents possible (articles, présentations, websites, livres, blogs...)
 
-Quarto c'est : 
+=> Très proche de R markdown 
 
+Mais plus grande flexibilité sur les formats de document possibles, les langages de programmation utilisables (notamment Python). Peut également être utilisé sur d'autres éditeurs de code (e.g. VS Code).
+Quelques fonctionnalités supplémentaires 
 
+## Installation et mise en place
 
+Téléchargement et installation du logiciel sur https://quarto.org/
+
+Possibilité d'ouvrir un document Quarto (comme un doc Rmd) directement dans RStudio 
+
+# Demonstration
 
 ## Chargement des pcks et des données
 
-```{r}
+Utilisation du fameux dataset iris
+
+> Un choix conservateur il faut l'admettre
+
+:::{.callout-note collapse="true"}
+## Ouvrir pour informations supplémentaires
+Utilisation uniquement à des fins de démonstration
+
+Exemple d'une note qui doit être ouverte pour y accéder.
+:::
+
+Premièrement, il faut : 
+
+1. charger les **librairies** 
+
+2. lire les **données**
+
+3. Vérifier que les données sont *au bon format*
+
+
+[*Au bon format* signifie que les données sont prêtes pour être utilisées et analysées]{.aside}
+
+```{r library et data, warning=FALSE, message=FALSE}
 library(tidyverse)
+library(ggplot2)
 
 data <- iris
 head(data)
 ```
+
+Ce dataset contient `r nrow(data)` lignes [^1].
+
+[^1]: Aucun ligne n'a de donnée manquante 
+
+## Citations 
+
+Même fonctionnement que sur Markdown en associant un @ avec un fichier .bib (pouvant venir de zotero par ex.) [@derksen_kinds_2022]
+
+[@epskamp_reproducibility_2019]
+
+intégré dans in @epskamp_reproducibility_2019
+
+## Statistiques descriptives
+
+::: {layout-ncol=2}
+![Très belles fleurs trouvées sur Google](flower.jpg){#fig-fleur}
+
+
+![Les dimensions d'une fleur trouvées sur Google](flower1.jpg){#fig-fleur2}
+
+:::
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+the average sepal length is `r mean(data$Sepal.Length)` cm 
+the average petal length is `r mean(data$Petal.Length)` cm
+:::
+
+::: {.column width="50%"}
+Les dimensions des fleurs varient en fonction de l'espèce étudiée (voir plus bas)
+:::
+
+::::
+
+## Affichage simultanée / comparaison 
+
+
+::: {.panel-tabset}
+#### base R
+```{.r}
+ data$Sepal.Length
+```
+
+#### tidyverse
+```{.r}
+data >%> select(Sepal.Length)
+```
+:::
+
+#Graphs 
+
+Idées de graphiques
+
+* correlations entre longueur et largeur des pétales
+  + de manière générale 
+  + en fonction de l'espèce
+  
+* correlations entre longueur et largeur des sépales
+  + de manière générale 
+  + en fonction de l'espèce 
+  
+* Liens entre sépales et pétales
+  + de manière générale
+  + en fonction de l'espèce
+
+## Longueur et larger des pétales
+
+```{r}
+#| label: fig-entire
+#| fig-cap: Pental length and petal width
+
+
+longxlargxpetale <- ggplot(data = data, aes(x = Petal.Length, y = Petal.Width)) +
+  geom_point(size = 3,
+             alpha = 0.8) +
+  theme_minimal() + labs(title = "Largeur des pétales en fonction de leur longueur", x = "longueur des pétales (cm)", y = "largeur des pétales (cm)")
+
+longxlargxpetale
+```
+Voir @fig-fleur2 pour une explication sur les mesures
+
+
+###  Séparation par espèces 
+
+```{r}
+#| label: fig-species
+#| fig-cap: Pental length and petal width by species 
+#| cap-location: margin
+
+longxlargxpetale_byspecies <- ggplot(data = data, aes(x = Petal.Length, y = Petal.Width)) +
+  geom_point(aes(color = Species, shape = Species), size = 3,
+             alpha = 0.8) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  theme_minimal() + labs(title = "Largeur des pétales en fonction de leur longueur et de l'espèce", x = "longueur des pétales (cm)", y = "largeur des pétales (cm)", color= "Espèces de fleur", shape= "Espèces de fleur")
+
+longxlargxpetale_byspecies
+```
+
+### Et pour les sépales : 
+
+::: {.panel-tabset}
+
+#### Par espèces
+```{r}
+#| label: fig-species_sepal
+#| fig-cap: Sepal length and petal width by species 
+longxlargxsepale_byspecies <- ggplot(data = data, aes(x = Sepal.Length, y = Sepal.Width)) +
+  geom_point(aes(color = Species, shape = Species), size = 3,
+             alpha = 0.8) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  theme_minimal() + labs(title = "Largeur des sépales en fonction de leur longueur et de l'espèce", x = "longueur des sépales (cm)", y = "largeur des sépales (cm)", color= "Espèces de fleur", shape= "Espèces de fleur")
+
+longxlargxsepale_byspecies
+```
+
+#### En général
+```{r}
+#| label: fig-sepal
+#| fig-cap: Sepal length and petal width 
+longxlargxsepale <- ggplot(data = data, aes(x = Sepal.Length, y = Sepal.Width)) +
+  geom_point(size = 3,
+             alpha = 0.8) +
+  theme_minimal() + labs(title = "Largeur des sépales en fonction de leur longueur", x = "longueur des sépales (cm)", y = "largeur des sépales (cm)")
+
+longxlargxsepale
+```
+:::
+
+
+
 

@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2022-08-04">
 
-<title>Quarto_A_to_Z</title>
+<title>Quarto de A à Z</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -78,6 +79,25 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -95,15 +115,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </head>
 
-<body class="fullcontent">
+<body>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
-<main class="content" id="quarto-document-content">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table des matières</h2>
+   
+  <ul>
+  <li><a href="#quest-ce-que-quarto" id="toc-quest-ce-que-quarto" class="nav-link active" data-scroll-target="#quest-ce-que-quarto"> <span class="header-section-number">1</span> Qu’est ce que Quarto</a>
+  <ul class="collapse">
+  <li><a href="#installation-et-mise-en-place" id="toc-installation-et-mise-en-place" class="nav-link" data-scroll-target="#installation-et-mise-en-place"> <span class="header-section-number">1.1</span> Installation et mise en place</a></li>
+  </ul></li>
+  <li><a href="#demonstration" id="toc-demonstration" class="nav-link" data-scroll-target="#demonstration"> <span class="header-section-number">2</span> Demonstration</a>
+  <ul class="collapse">
+  <li><a href="#chargement-des-pcks-et-des-données" id="toc-chargement-des-pcks-et-des-données" class="nav-link" data-scroll-target="#chargement-des-pcks-et-des-données"> <span class="header-section-number">2.1</span> Chargement des pcks et des données</a></li>
+  <li><a href="#citations" id="toc-citations" class="nav-link" data-scroll-target="#citations"> <span class="header-section-number">2.2</span> Citations</a></li>
+  <li><a href="#statistiques-descriptives" id="toc-statistiques-descriptives" class="nav-link" data-scroll-target="#statistiques-descriptives"> <span class="header-section-number">2.3</span> Statistiques descriptives</a></li>
+  <li><a href="#affichage-simultanée-comparaison" id="toc-affichage-simultanée-comparaison" class="nav-link" data-scroll-target="#affichage-simultanée-comparaison"> <span class="header-section-number">2.4</span> Affichage simultanée / comparaison</a></li>
+  <li><a href="#longueur-et-larger-des-pétales" id="toc-longueur-et-larger-des-pétales" class="nav-link" data-scroll-target="#longueur-et-larger-des-pétales"> <span class="header-section-number">2.5</span> Longueur et larger des pétales</a>
+  <ul class="collapse">
+  <li><a href="#séparation-par-espèces" id="toc-séparation-par-espèces" class="nav-link" data-scroll-target="#séparation-par-espèces"> <span class="header-section-number">2.5.1</span> Séparation par espèces</a></li>
+  <li><a href="#et-pour-les-sépales" id="toc-et-pour-les-sépales" class="nav-link" data-scroll-target="#et-pour-les-sépales"> <span class="header-section-number">2.5.2</span> Et pour les sépales :</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Quarto_A_to_Z</h1>
+<h1 class="title">Quarto de A à Z</h1>
 </div>
 
 
@@ -111,33 +154,74 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 4, 2022</p>
+    </div>
+  </div>
     
   </div>
   
 
 </header>
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Partons à la découverte de Quarto</p>
-<p>Quarto c’est :</p>
+<section id="quest-ce-que-quarto" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Qu’est ce que Quarto</h1>
+<ul>
+<li>système de publication</li>
+<li>permet de combiner du texte, du code et des résultats d’analyses (e.g.&nbsp;ggplots)</li>
+<li>différents formats de documents possible (articles, présentations, websites, livres, blogs…)</li>
+</ul>
+<p>=&gt; Très proche de R markdown</p>
+<p>Mais plus grande flexibilité sur les formats de document possibles, les langages de programmation utilisables (notamment Python). Peut également être utilisé sur d’autres éditeurs de code (e.g.&nbsp;VS Code). Quelques fonctionnalités supplémentaires</p>
+<section id="installation-et-mise-en-place" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="installation-et-mise-en-place"><span class="header-section-number">1.1</span> Installation et mise en place</h2>
+<p>Téléchargement et installation du logiciel sur https://quarto.org/</p>
+<p>Possibilité d’ouvrir un document Quarto (comme un doc Rmd) directement dans RStudio</p>
 </section>
-<section id="chargement-des-pcks-et-des-données" class="level2">
-<h2 class="anchored" data-anchor-id="chargement-des-pcks-et-des-données">Chargement des pcks et des données</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
-✔ ggplot2 3.3.6     ✔ purrr   0.3.4
-✔ tibble  3.1.8     ✔ dplyr   1.0.9
-✔ tidyr   1.2.0     ✔ stringr 1.4.0
-✔ readr   2.1.2     ✔ forcats 0.5.1
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()</code></pre>
+</section>
+<section id="demonstration" class="level1 page-columns page-full" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Demonstration</h1>
+<section id="chargement-des-pcks-et-des-données" class="level2 page-columns page-full" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="chargement-des-pcks-et-des-données"><span class="header-section-number">2.1</span> Chargement des pcks et des données</h2>
+<p>Utilisation du fameux dataset iris</p>
+<blockquote class="blockquote">
+<p>Un choix conservateur il faut l’admettre</p>
+</blockquote>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> iris</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-caption-container flex-fill">
+Ouvrir pour informations supplémentaires
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Utilisation uniquement à des fins de démonstration</p>
+<p>Exemple d’une note qui doit être ouverte pour y accéder.</p>
+</div>
+</div>
+</div>
+<p>Premièrement, il faut :</p>
+<ol type="1">
+<li><p>charger les <strong>librairies</strong></p></li>
+<li><p>lire les <strong>données</strong></p></li>
+<li><p>Vérifier que les données sont <em>au bon format</em></p></li>
+</ol>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside"><em>Au bon format</em> signifie que les données sont prêtes pour être utilisées et analysées</span></div></div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> iris</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 1          5.1         3.5          1.4         0.2  setosa
@@ -148,9 +232,191 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 6          5.4         3.9          1.7         0.4  setosa</code></pre>
 </div>
 </div>
+<p>Ce dataset contient 150 lignes <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+</section>
+<section id="citations" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="citations"><span class="header-section-number">2.2</span> Citations</h2>
+<p>Même fonctionnement que sur Markdown en associant un @ avec un fichier .bib (pouvant venir de zotero par ex.) <span class="citation" data-cites="derksen_kinds_2022">(<a href="#ref-derksen_kinds_2022" role="doc-biblioref">Derksen &amp; Morawski, 2022</a>)</span></p>
+<p><span class="citation" data-cites="epskamp_reproducibility_2019">(<a href="#ref-epskamp_reproducibility_2019" role="doc-biblioref">Epskamp, 2019</a>)</span></p>
+<p>intégré dans in <span class="citation" data-cites="epskamp_reproducibility_2019">Epskamp (<a href="#ref-epskamp_reproducibility_2019" role="doc-biblioref">2019</a>)</span></p>
+</section>
+<section id="statistiques-descriptives" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="statistiques-descriptives"><span class="header-section-number">2.3</span> Statistiques descriptives</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-fleur" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="flower.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 1: Très belles fleurs trouvées sur Google</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-fleur2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="flower1.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 2: Les dimensions d’une fleur trouvées sur Google</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>the average sepal length is 5.8433333 cm the average petal length is 3.758 cm</p>
+</div><div class="column" style="width:50%;">
+<p>Les dimensions des fleurs varient en fonction de l’espèce étudiée (voir plus bas)</p>
+</div>
+</div>
+</section>
+<section id="affichage-simultanée-comparaison" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="affichage-simultanée-comparaison"><span class="header-section-number">2.4</span> Affichage simultanée / comparaison</h2>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">tidyverse</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a> data<span class="sc">$</span>Sepal.Length</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">&gt;</span>%<span class="sc">&gt;</span> <span class="fu">select</span>(Sepal.Length)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>#Graphs</p>
+<p>Idées de graphiques</p>
+<ul>
+<li>correlations entre longueur et largeur des pétales
+<ul>
+<li>de manière générale</li>
+<li>en fonction de l’espèce</li>
+</ul></li>
+<li>correlations entre longueur et largeur des sépales
+<ul>
+<li>de manière générale</li>
+<li>en fonction de l’espèce</li>
+</ul></li>
+<li>Liens entre sépales et pétales
+<ul>
+<li>de manière générale</li>
+<li>en fonction de l’espèce</li>
+</ul></li>
+</ul>
+</section>
+<section id="longueur-et-larger-des-pétales" class="level2 page-columns page-full" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="longueur-et-larger-des-pétales"><span class="header-section-number">2.5</span> Longueur et larger des pétales</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>longxlargxpetale <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Petal.Width)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Largeur des pétales en fonction de leur longueur"</span>, <span class="at">x =</span> <span class="st">"longueur des pétales (cm)"</span>, <span class="at">y =</span> <span class="st">"largeur des pétales (cm)"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>longxlargxpetale</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-entire" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="quarto_a_to_z_files/figure-html/fig-entire-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figure 3: Pental length and petal width</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Voir <a href="#fig-fleur2">Figure&nbsp;2</a> pour une explication sur les mesures</p>
+<section id="séparation-par-espèces" class="level3 page-columns page-full" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="séparation-par-espèces"><span class="header-section-number">2.5.1</span> Séparation par espèces</h3>
+<div class="cell page-columns page-full">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>longxlargxpetale_byspecies <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Petal.Width)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Species, <span class="at">shape =</span> Species), <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>,<span class="st">"purple"</span>,<span class="st">"cyan4"</span>)) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Largeur des pétales en fonction de leur longueur et de l'espèce"</span>, <span class="at">x =</span> <span class="st">"longueur des pétales (cm)"</span>, <span class="at">y =</span> <span class="st">"largeur des pétales (cm)"</span>, <span class="at">color=</span> <span class="st">"Espèces de fleur"</span>, <span class="at">shape=</span> <span class="st">"Espèces de fleur"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>longxlargxpetale_byspecies</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-species" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="quarto_a_to_z_files/figure-html/fig-species-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure 4: Pental length and petal width by species</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="et-pour-les-sépales" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="et-pour-les-sépales"><span class="header-section-number">2.5.2</span> Et pour les sépales :</h3>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Par espèces</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">En général</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>longxlargxsepale_byspecies <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width)) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Species, <span class="at">shape =</span> Species), <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>,<span class="st">"purple"</span>,<span class="st">"cyan4"</span>)) <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Largeur des sépales en fonction de leur longueur et de l'espèce"</span>, <span class="at">x =</span> <span class="st">"longueur des sépales (cm)"</span>, <span class="at">y =</span> <span class="st">"largeur des sépales (cm)"</span>, <span class="at">color=</span> <span class="st">"Espèces de fleur"</span>, <span class="at">shape=</span> <span class="st">"Espèces de fleur"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>longxlargxsepale_byspecies</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-species_sepal" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="quarto_a_to_z_files/figure-html/fig-species_sepal-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figure 5: Sepal length and petal width by species</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>longxlargxsepale <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width)) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Largeur des sépales en fonction de leur longueur"</span>, <span class="at">x =</span> <span class="st">"longueur des sépales (cm)"</span>, <span class="at">y =</span> <span class="st">"largeur des sépales (cm)"</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>longxlargxsepale</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-sepal" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="quarto_a_to_z_files/figure-html/fig-sepal-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figure 6: Sepal length and petal width</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</section>
+</section>
 </section>
 
-</main>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-derksen_kinds_2022" class="csl-entry" role="doc-biblioentry">
+Derksen, M., &amp; Morawski, J. (2022). Kinds of <span>Replication</span>: <span>Examining</span> the <span>Meanings</span> of <span>“<span>Conceptual</span> <span>Replication</span>”</span> and <span>“<span>Direct</span> <span>Replication</span>.”</span> <em>Perspectives on Psychological Science</em>, 174569162110411. <a href="https://doi.org/10.1177/17456916211041116">https://doi.org/10.1177/17456916211041116</a>
+</div>
+<div id="ref-epskamp_reproducibility_2019" class="csl-entry" role="doc-biblioentry">
+Epskamp, S. (2019). Reproducibility and <span>Replicability</span> in a <span>Fast</span>-<span>Paced</span> <span>Methodological</span> <span>World</span>. <em>Advances in Methods and Practices in Psychological Science</em>, <em>2</em>(2), 145–155. <a href="https://doi.org/10.1177/2515245919847421">https://doi.org/10.1177/2515245919847421</a>
+</div>
+</div></section><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1" role="doc-endnote"><p>Aucun ligne n’a de donnée manquante<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

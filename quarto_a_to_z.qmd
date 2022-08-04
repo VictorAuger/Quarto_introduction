@@ -1,0 +1,23 @@
+---
+title: "Quarto_A_to_Z"
+format: html
+---
+
+## Introduction
+
+Partons à la découverte de Quarto 
+
+Quarto c'est : 
+
+
+
+
+## Chargement des pcks et des données
+
+```{r}
+library(tidyverse)
+
+data <- iris
+head(data)
+```
+
